@@ -1,17 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// Importing the components from the Components folder.
+import Header from './Components/Header.js';
+
+import '../src/styles/index.css';
+{/**
+import Advertisement from './Components/Advertisement.js'
+import RightSideBar from './Components/RightSideBar.js'
+import Footer from '/.Components/Footer.js'
+*/}
+
+export default class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            cartNumber: 50,
+            storeName: 'ShopAround',
+            language: 'English',
+            userName: 'James'
+        }
+    }
+    render() {
+        return(
+            <div className="container">
+                <Header storename={this.state.storeName} itemsInCart={this.state.cartNumber}/>
+                <section className="main-content-area">
+
+                </section>
+                {/**
+                 * 
+                 * <Advertisement />
+                 * 
+                 * <RightSideBar itemsInCart={this.state.cartNumber}/>
+                 * <Footer />
+                 */}
+            </div>
+        );
+    }
+}
+
+
+
+const webPage = document.getElementById("webPage");
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <App />,
+    webPage
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
