@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar.js';
 import DepartmentSelection from './DepartmentSelection.js';
+import RightNavigation from './RightNavigation.js';
 import ShoppingCart from './ShoppingCart.js';
 
 export default class Header extends Component {
@@ -19,8 +20,12 @@ export default class Header extends Component {
                     </div>
                 </div>
                 <section className="bottom-nav-area">
-                    <DepartmentSelection />
-                    <ShoppingCart itemsInCart={this.props.itemsInCart}/>
+                        <DepartmentSelection />
+                        <RightNavigation 
+                            languageSelection={this.props.languageSelection}
+                            userName={this.props.userName}
+                        />
+                        <ShoppingCart itemsInCart={this.props.itemsInCart}/>
                 </section>
             </header>
         );

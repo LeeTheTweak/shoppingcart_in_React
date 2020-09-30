@@ -16,14 +16,19 @@ export default class App extends Component {
         this.state = {
             cartNumber: 50,
             storeName: 'ShopAround',
-            language: 'English',
-            userName: 'James'
+            language: 'EN',
+            userName: 'Christopher'
         }
     }
     render() {
         return(
             <div className="container">
-                <Header storename={this.state.storeName} itemsInCart={this.state.cartNumber}/>
+                <Header 
+                    storename={this.state.storeName} 
+                    itemsInCart={this.state.cartNumber} 
+                    languageSelection={this.state.language}
+                    userName={this.state.userName}
+                />
                 <section className="main-content-area">
 
                 </section>

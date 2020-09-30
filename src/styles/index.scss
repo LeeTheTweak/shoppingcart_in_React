@@ -9,7 +9,6 @@ html, body {
         margin-bottom: 20px;
     }
     header {
-        overflow: auto;
         background: #161e55;
         padding: 10px 20px;
         .brand-area {
@@ -58,11 +57,17 @@ html, body {
                 }
             }
         }
-    }
     .bottom-nav-area {
+        display: flex;
+        .department-selection-section {
+            flex-grow: 2;
+            position: relative;
+            top: 20px;
+        }
         .department-selection {
+            width: 100px;
+            display: flex;
             cursor: pointer;
-            float: left;
             h4 {
                 margin: 0;
             }
@@ -78,7 +83,7 @@ html, body {
             margin: 0;
             display: block;
             position: absolute;
-            top: 7.8%;
+            top: 50%;
             width: 230px;
             background: white;
             color: #2b2b2b;
@@ -90,7 +95,7 @@ html, body {
                 li {
                     margin: 8px 0px;
                     list-style-type: none;
-                    transition: all .1s ease-in-out;
+                    transition: all .05s ease-in-out;
                     &:hover {
                         font-size: 1rem;
                         background: #ebebeb;
@@ -100,18 +105,71 @@ html, body {
             }
         }
 
+        .right-navigation-section {
+            display: flex;
+            flex-direction: row;
+            section {
+                margin: 0 20px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            p {
+                margin: 0;
+            }
+            .language-section {
+                flex-direction: column;
+                
+            }
+            .greeting-section {
+                p {
+                    position: relative;
+                    top: 20px;
+                }
+            }
+            .lists-section {
+                p {
+                    position: relative;
+                    top: 20px;
+                }
+                .lists-box {
+                    padding: 10px 20px;
+                    background: white;
+                    position: absolute;
+                    top: 103px;
+                    color: #3d3d3d;
+                    border: 1px solid lightgray;
+                    border-radius: 5px;
+                    h3 {
+                        margin: 0;
+                    }
+                    .list {
+                        border-bottom: 1px solid #3d3d3d;
+                        margin: 5px 0px;
+                    }
+                    button {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
 
     .shopping-cart-area {
         float: right;
         .cart-number {
             margin-right: 5px;
             color: orange;
+            position: relative;
+            top: 20px;
         }
         .cart-icon-area {
-               
-            }
-            .cart-popup {
-                opacity: 0.0;
+            position: relative;
+            top: 20px;
+        }
+        .cart-popup {
+                display: none;
                 border: 1px solid #2b2b2b;
                 border-radius: 5px;
                 font-size: .95rem;
@@ -121,8 +179,7 @@ html, body {
                 text-align: center;
                 position: absolute;
                 right: 2%;
-                top: 80px;
-                transition: all .2s ease-in-out;
+                top: 150px;
                 button {
                     border: none;
                     border-radius: 5px;
@@ -132,7 +189,7 @@ html, body {
                 }
             } 
             .show-cart-popup {
-                opacity: 1.0;
+                display: block;
                 border: 1px solid #2b2b2b;
                 border-radius: 5px;
                 font-size: .95rem;
@@ -142,8 +199,7 @@ html, body {
                 text-align: center;
                 position: absolute;
                 right: 2%;
-                top: 80px;
-                transition: all .2s ease-in-out;
+                top: 110px;
                 button {
                     border: none;
                     border-radius: 5px;
@@ -159,6 +215,7 @@ html, body {
             }
         }
     }
+}
     .main-content-area {
 
     }

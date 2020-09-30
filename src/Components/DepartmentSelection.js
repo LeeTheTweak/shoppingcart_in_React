@@ -30,7 +30,7 @@ export default class DepartmentSelection extends Component {
 
     render() {
         return(
-            <div>
+            <section className="department-selection-section">
                 <div onMouseOver={this.showDepartmentPop} onMouseLeave={this.closeDepartmentPop} className="department-selection">
                     <h4>Department<span><i class="fas fa-sort-down"></i></span></h4>
                 </div>
@@ -55,7 +55,7 @@ export default class DepartmentSelection extends Component {
                         <li>Full Store Directory</li>
                     </ul>
                 </div>
-            </div>
+            </section>
         );
     }
 }
