@@ -4,11 +4,12 @@ export default class RightNavigation extends Component {
     constructor() {
         super();
         this.state = {
-            wishList: [ ],
+            wishList: [],
             listNumber: 0,
             wishListClass: 'lists-box'
         }
         this.addToWishList = this.addToWishList.bind(this);
+        this.showListToggle = this.showListToggle.bind(this);
     }
 
     showListToggle = () => {
@@ -28,15 +29,12 @@ export default class RightNavigation extends Component {
 
         let addListBox = document.getElementsByClassName("addListBox")[0];
 
-        let addListBoxValue =  addListBox.value;
-
-        let joined = this.state.wishList.concat(addListBoxValue);
+        let joined = this.state.wishList.concat(addListBox.value);
         
-
         this.setState({
             wishList: joined
         }, () => {
-            this.state.listNumber = this.state.wishList.length + 1;
+            this.state.listNumber = (this.state.wishList.length + 1);
         });
     }
 

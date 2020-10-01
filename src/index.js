@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // Importing the components from the Components folder.
 import Header from './Components/Header.js';
+import ContentArea from './Components/ContentArea/ContentArea.js';
 
 import '../src/styles/index.css';
 {/**
@@ -14,29 +15,57 @@ export default class App extends Component {
     constructor() {
         super();
         this.state = {
-            cartNumber: 50,
+            cartStatus: '',
+            itemsInCart: 14,
+            savedItems: 0,
             storeName: 'ShopAround',
             language: 'EN',
             userName: 'Christopher'
         }
+        this.cartChecker = this.cartChecker.bind(this)
     }
+
+    componentDidMount() {
+        this.cartChecker();
+    }
+
+    cartChecker = () => {
+        if(this.state.itemsInCart == 0) {
+            this.setState({
+                cartStatus: ` is empty`
+            });
+        } else if(this.state.itemsInCart == 1) {
+            this.setState({
+                cartStatus: ` has ${this.state.itemsInCart} item.`
+            });
+        } else {
+            this.setState({
+                cartStatus: ` has ${this.state.itemsInCart} items.`
+            });
+        }
+            
+    }
+
     render() {
+        
         return(
             <div className="container">
                 <Header 
-                    storename={this.state.storeName} 
-                    itemsInCart={this.state.cartNumber} 
+                    storeName={this.state.storeName} 
+                    itemsInCart={this.state.itemsInCart} 
                     languageSelection={this.state.language}
                     userName={this.state.userName}
                 />
-                <section className="main-content-area">
-
-                </section>
+                <ContentArea 
+                    storeName={this.state.storeName}
+                    itemsInCart={this.state.itemsInCart}
+                    cartStatus={this.state.cartStatus}
+                />
                 {/**
                  * 
                  * <Advertisement />
                  * 
-                 * <RightSideBar itemsInCart={this.state.cartNumber}/>
+                 * <RightSideBar itemsInCart={this.state.itemsInCart}/>
                  * <Footer />
                  */}
             </div>

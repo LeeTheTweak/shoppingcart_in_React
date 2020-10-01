@@ -15,7 +15,7 @@ export default class Header extends Component {
         return(
             <header>
                 <div className="header-container">
-                    <div className="brand-area"><p>{this.props.storename}</p>
+                    <div className="brand-area"><p>{this.props.storeName}</p>
                         <SearchBar />
                     </div>
                 </div>
