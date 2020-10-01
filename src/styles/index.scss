@@ -127,34 +127,60 @@ html, body {
                     top: 20px;
                 }
             }
-            .lists-section {
-                p {
-                    position: relative;
-                    top: 20px;
-                }
-                .lists-box {
-                    padding: 10px 20px;
-                    background: white;
-                    position: absolute;
-                    top: 103px;
-                    color: #3d3d3d;
-                    border: 1px solid lightgray;
-                    border-radius: 5px;
-                    h3 {
-                        margin: 0;
-                    }
-                    .list {
-                        border-bottom: 1px solid #3d3d3d;
-                        margin: 5px 0px;
-                    }
-                    button {
-                        &:hover {
-                            cursor: pointer;
-                        }
-                    }
+        .lists-section {
+            p {
+                position: relative;
+                top: 20px;
+            }
+        }
+        .lists-box {
+            width: 200px;
+            display: none;
+            padding: 10px 20px;
+            background: white;
+            position: absolute;
+            top: 103px;
+            color: #3d3d3d;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            h3 {
+                margin: 0;
+            }
+            .list {
+                border-bottom: 1px solid #3d3d3d;
+                margin: 5px 0px;
+            }
+            button {
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }
+        .show-list-box {
+            width: 200px;
+            display: block;
+            padding: 10px 20px;
+            background: white;
+            position: absolute;
+            top: 103px;
+            color: #3d3d3d;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            h3 {
+                margin: 0;
+            }
+            .list {
+                width: auto;
+                border-bottom: 1px solid #3d3d3d;
+                margin: 5px 0px;
+            }
+            button {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }    
+    }
 
     .shopping-cart-area {
         float: right;

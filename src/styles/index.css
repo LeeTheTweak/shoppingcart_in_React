@@ -176,7 +176,9 @@ html, body {
   top: 20px;
 }
 
-.container header .bottom-nav-area .right-navigation-section .lists-section .lists-box {
+.container header .bottom-nav-area .right-navigation-section .lists-box {
+  width: 200px;
+  display: none;
   padding: 10px 20px;
   background: white;
   position: absolute;
@@ -186,16 +188,42 @@ html, body {
   border-radius: 5px;
 }
 
-.container header .bottom-nav-area .right-navigation-section .lists-section .lists-box h3 {
+.container header .bottom-nav-area .right-navigation-section .lists-box h3 {
   margin: 0;
 }
 
-.container header .bottom-nav-area .right-navigation-section .lists-section .lists-box .list {
+.container header .bottom-nav-area .right-navigation-section .lists-box .list {
   border-bottom: 1px solid #3d3d3d;
   margin: 5px 0px;
 }
 
-.container header .bottom-nav-area .right-navigation-section .lists-section .lists-box button:hover {
+.container header .bottom-nav-area .right-navigation-section .lists-box button:hover {
+  cursor: pointer;
+}
+
+.container header .bottom-nav-area .right-navigation-section .show-list-box {
+  width: 200px;
+  display: block;
+  padding: 10px 20px;
+  background: white;
+  position: absolute;
+  top: 103px;
+  color: #3d3d3d;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.container header .bottom-nav-area .right-navigation-section .show-list-box h3 {
+  margin: 0;
+}
+
+.container header .bottom-nav-area .right-navigation-section .show-list-box .list {
+  width: auto;
+  border-bottom: 1px solid #3d3d3d;
+  margin: 5px 0px;
+}
+
+.container header .bottom-nav-area .right-navigation-section .show-list-box button:hover {
   cursor: pointer;
 }
 
