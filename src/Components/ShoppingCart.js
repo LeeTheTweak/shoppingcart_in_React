@@ -8,23 +8,18 @@ export default class SearchBar extends Component {
             active: false,
             popupClass: 'cart-popup',
         }
-        this.showPopup = this.showPopup.bind(this);
-        this.closePopup = this.closePopup.bind(this);
+        this.toggleCartPopup= this.toggleCartPopup.bind(this);
     }
 
-    showPopup = () => {
-        if(this.state.active == false) {
+    // Switch the cart popup class
+
+    toggleCartPopup = () => {
+        if(this.state.popupClass == 'cart-popup') {
             this.setState({
-                active: true,
-                popupClass: 'show-cart-popup'
+                popupClass: 'show-cart-popup'           
             });
-        }
-    }
-    
-    closePopup = () => {
-        if(this.state.active == true) {
+        } else if(this.state.popupClass == 'show-cart-popup') {
             this.setState({
-                active: false,
                 popupClass: 'cart-popup'
             });
         }
@@ -34,8 +29,8 @@ export default class SearchBar extends Component {
         return(
             <section className="shopping-cart-area">
                 <span className="cart-number">{this.props.itemsInCart}</span>
-                <span className="cart-icon-area"><i onMouseEnter={this.showPopup} onClick={this.showPopup} className="fas fa-shopping-cart"></i></span>
-                <div className={this.state.popupClass} onMouseLeave={this.closePopup} onClick={this.closePopup}>
+                <span className="cart-icon-area"><i onMouseEnter={this.toggleCartPopup} onClick={this.toggleCartPopup} className="fas fa-shopping-cart"></i></span>
+                <div className={this.state.popupClass} onMouseLeave={this.toggleCartPopup} onClick={this.toggleCartPopup}>
                     <p>You have {this.props.itemsInCart} items in your shopping cart.</p>
                     <a href="#" target="new"><button>View Cart ({this.props.itemsInCart} items)</button></a>
                 </div>
