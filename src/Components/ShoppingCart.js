@@ -20,6 +20,7 @@ export default class SearchBar extends Component {
             });
         }
     }
+    
     closePopup = () => {
         if(this.state.active == true) {
             this.setState({

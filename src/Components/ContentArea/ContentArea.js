@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import RightSideBar from './RideSideBar.js';
+import RightSideBar from './RightSideBar.js';
 
 import items from '../../data/items.js';
 
