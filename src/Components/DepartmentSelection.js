@@ -18,7 +18,7 @@ export default class DepartmentSelection extends Component {
             });
         }
     }
-
+    // When user's mouse leaves the department selection div, close the department popup.
     closeDepartmentPop = () => {
         if(this.state.active == true) {
             this.setState({
@@ -31,9 +31,15 @@ export default class DepartmentSelection extends Component {
     render() {
         return(
             <section className="department-selection-section">
+
+                 {/************** The department div element **************** */}
+
                 <div onMouseOver={this.showDepartmentPop} onMouseLeave={this.closeDepartmentPop} className="department-selection">
                     <h4>Department<span><i class="fas fa-sort-down"></i></span></h4>
                 </div>
+                
+                {/*************** The department popup *********************** */}
+
                 <div onMouseOver={this.showDepartmentPop} onMouseLeave={this.closeDepartmentPop} className={this.state.showPopup}>
                     <ul>
                         <li>Electronics & Computers</li>

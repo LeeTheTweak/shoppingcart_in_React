@@ -12,6 +12,8 @@ export default class RightNavigation extends Component {
         this.showListToggle = this.showListToggle.bind(this);
     }
 
+    /************ Function for toggling the wishlist popup ********** */
+
     showListToggle = () => {
         if(this.state.wishListClass == 'lists-box') {
             this.setState({
@@ -24,22 +26,37 @@ export default class RightNavigation extends Component {
         }
     }
 
+    /*************** Function when add to wishlist button is clicked, add name of item to the wishlist array ************ */
 
     addToWishList = () => {
 
+        // Get the add list box input
+
         let addListBox = document.getElementsByClassName("addListBox")[0];
 
-        let joined = this.state.wishList.concat(addListBox.value);
+        // Declared a variable called, wishListArray and assigning it to the wishlist array state.
+
+        let wishListArray = this.state.wishList;
+        wishListArray.push(addListBox.value)            // Push whatever is in the addListBox's input value to the wishListArray.
         
+        /**
+         * Set wishList state to the created wishListArray. 
+         * Function to set the listNumber state to the new wishListArray + 1.
+         */
+
         this.setState({
-            wishList: joined
+            // Set wishList state to wishListArray
+            wishList: wishListArray
         }, () => {
-            this.state.listNumber = (this.state.wishList.length + 1);
+            // Set listNumber state to the wishListArray's length.
+            this.state.listNumber = wishListArray.length
         });
     }
 
 
     render() {
+
+        // A quick greeting variable.
 
         let greeting = `Hello, ${this.props.userName}`;
 

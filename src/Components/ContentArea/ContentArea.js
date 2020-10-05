@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 
+import RightSideBar from './RideSideBar.js';
+
+import items from '../../data/items.js';
+
+
 export default class ContentArea extends Component {
     constructor() {
         super();
         this.state = {
-
+            items
         }
     }
     render() {
         return(
             <section className="main-content-section">
-                <div className="main-content-cart-wrapper">
+                <section className="main-content-cart-wrapper">
                     <section className="cart-notifyer-section">
                         <h2>Your {this.props.storeName} cart {this.props.cartStatus}</h2>
                         <p>
@@ -23,11 +28,14 @@ export default class ContentArea extends Component {
                     <section className="your-items-section">
                         <h2>Your Items</h2>
                         <ul className="items-navigation">
-                            <li></li>
-                            <li></li>
+                            <li>No items saved for later</li>
+                            <li>Buy it again</li>
                         </ul>
                     </section>
-                </div>
+                </section>
+                <section className="right-side-content-wrapper">
+                    <RightSideBar buyAgain={this.state.items}/>
+                </section>
             </section>
         );
     }

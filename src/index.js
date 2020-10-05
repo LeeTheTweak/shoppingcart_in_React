@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 // Importing the components from the Components folder.
 import Header from './Components/Header.js';
 import ContentArea from './Components/ContentArea/ContentArea.js';
-
+// Import styles and data
 import '../src/styles/index.css';
 {/**
-import Advertisement from './Components/Advertisement.js'
-import RightSideBar from './Components/RightSideBar.js'
 import Footer from '/.Components/Footer.js'
 */}
 
@@ -16,7 +14,7 @@ export default class App extends Component {
         super();
         this.state = {
             cartStatus: '',
-            itemsInCart: 14,
+            itemsInCart: 5,
             savedItems: 0,
             storeName: 'ShopAround',
             language: 'EN',
@@ -25,9 +23,13 @@ export default class App extends Component {
         this.cartChecker = this.cartChecker.bind(this)
     }
 
+    // When component mounts, call the cartChecker function.
+
     componentDidMount() {
         this.cartChecker();
     }
+
+    // Checks the cart amount. Lets user know how much items they have in their account.
 
     cartChecker = () => {
         if(this.state.itemsInCart == 0) {
@@ -47,7 +49,6 @@ export default class App extends Component {
     }
 
     render() {
-        
         return(
             <div className="container">
                 <Header 
@@ -62,10 +63,6 @@ export default class App extends Component {
                     cartStatus={this.state.cartStatus}
                 />
                 {/**
-                 * 
-                 * <Advertisement />
-                 * 
-                 * <RightSideBar itemsInCart={this.state.itemsInCart}/>
                  * <Footer />
                  */}
             </div>

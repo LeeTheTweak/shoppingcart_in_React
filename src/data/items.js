@@ -5,7 +5,7 @@ let items =
 [
     {
         itemName: 'Xbox Series X',
-        picture: 'https://i5.walmartimages.com/asr/91de7bfe-8289-4b78-9256-1c006ecceb5d.1b2bfd38b4afcf7e650eb004292aeb6b.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff',
+        picture: 'https://images-na.ssl-images-amazon.com/images/I/51A41nLe5IL._SL1200_.jpg',
         description: `Introducing Xbox Series X, the fastest, most powerful Xbox ever. Play thousands of titles from four generations of consoles—all games look and play best on Xbox Series X. At the heart of Series X is the Xbox Velocity Architecture, which pairs a custom SSD with integrated software for faster, 
                       streamlined gameplay with significantly reduced load times. Seamlessly move between multiple games in a flash with Quick Resume. Explore rich new worlds and enjoy the action like never before with the unmatched 12 teraflops of raw graphic processing power. 
                      Enjoy 4K gaming at up to 120 frames per second, advanced 3D spatial sound, and more. Get started with Xbox Game Pass Ultimate, which includes a library of 100+ high-quality games, an EA Play membership, online multiplayer, and all new Xbox Game Studios titles the day they launch like Halo 
@@ -29,8 +29,5 @@ let items =
         reviews: 4
     }
 ]
-
-
-console.log(items);
 
 export default items;

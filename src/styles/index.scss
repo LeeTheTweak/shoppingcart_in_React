@@ -241,6 +241,53 @@ html, body {
     }
 }
     .main-content-section {
+        padding: 30px;
         color: #3d3d3d;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        .main-content-cart-wrapper {
+            flex-grow: 1;
+            h2 {
+                margin: 0;
+            }
+            p {
+                width: 600px;
+            }
+        }
+        .right-side-content-wrapper {
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            padding: 20px;
+            
+            .sidebar-title {
+
+            }
+            .buy-again-list {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                div {
+                    width: 250px;
+                    .buy-again-image {
+                        width: 150px;
+                        height: 100px;
+                    }
+                }
+                .buy-again-item {
+                    .buy-again-image {
+                        float: left;
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .buy-again-info {
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
